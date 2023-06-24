@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School project</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <div class="main-div">
+
+        <div class="top">
+            <div class="head-bar">
+                <a href="">HOME</a>
+                <a href="#aboutus">ABOUT</a>
+                {% if user.is_staff %}
+                <a href="logout/">logout</a>
+                <a href="admit/">admission</a>
+                <a href="table/">display</a>
+                {% elif user.is_authenticated %}
+                <a href="">{{user.username}}</a>
+                <a href="logout/">logout</a>
+                {% else %}
+                <a href="log/">LOGIN</a>
+                <a href="reg/">REGISTER</a>
+                {% endif %}
+            </div>
+            <div class="top-body" style="background-image: url('/static/images/school.jpg');">
+                <center>
+                    <div class="top-mid">
+                        <h1>LORDS PUBLIC SCHOOL</h1>
+                        <P>LORDS PUBLIC SCHOOL OOTY was established in 2001. India’s best fully residential,
+                            international co-educational school The school consists of Grades from playschool to higher
+                            secondary.The motto of the school is “Truth, Trust and Triumph” and students are encouraged
+                            to practice secular and ethical values in an atmosphere</P>
+                        
+                    </div>
+                </center>
+
+            </div>
+        </div>
+        <div class="mid" id="aboutus">
+            <h1>
+                <center>
+                    About us
+                </center>
+            </h1>
+            <center>
+                <p>
+
+                    Kerala's one of the best leading public school.Students friendly atmophere.It has several classrooms
+                    for instructional purposes. All the classrooms are in good condition. It has 2 other rooms for
+                    non-teaching activities. The school has Pucca boundary wall. The source of Drinking Water in the
+                    school is None and it is functional. The school has 6 boys toilet and it is functional. and 6 girls
+                    toilet and it is functional. The school has a playground. The school has a library and has 7000
+                    books in its library. The school does not need ramp for disabled children to access classrooms. The
+                    school has 13 computers for teaching and learning purposes and all are functional. The school is
+                    having a computer aided learning lab. The school is Provided and Prepared in School Premises
+                    providing mid-day meal.</p>
+            </center>
+            <center>
+                <div class="inner-mid">
+                    <!--product image loading-->
+                    <div class="pro-mid">
+                        <img src="{% static 'images/school1.jpg' %}" alt="">
+                        <b> LORDS PUBLIC SCHOOL</b>
+                        <br>
+                    </div>
+                    <!-- product end -->
+                </div>
+            </center>
+        </div>
+        <div class="footer">
+            <h1>Contact Us</h1>
+            <div class="footer-details">
+                <form>
+                    <label for="Name">Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="enter your name..."><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="enter your email..."><br>
+
+                    <label for="phone">Phone:</label><br>
+                    <input type="text" id="phone" name="phone" placeholder="enter your number..."><br>
+                    <label for="">Messages:</label><br>
+                    <textarea name="" id="" cols="50" rows="10" placeholder="write something..."></textarea><br>
+
+                    <br>&nbsp;&nbsp;<button type="button">submit</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
